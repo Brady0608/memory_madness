@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx5db62hy67yw"]
+
+[ext_resource type="Script" path="res://scenes/game_over_ui/game_over_ui.gd" id="1_leh35"]
+[ext_resource type="Texture2D" uid="uid://dr5c7ymq4wmeu" path="res://assets/ui/UIbg.png" id="2_61r01"]
+[ext_resource type="LabelSettings" uid="uid://bb475bkqlpx44" path="res://assets/LG_84_Green.tres" id="3_lxgxm"]
+[ext_resource type="LabelSettings" uid="uid://efdir2vdny11" path="res://assets/GM_32_Dark.tres" id="4_rq62j"]
+
+[node name="GameOverUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_leh35")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -192.0
+offset_right = 256.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_61r01")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "YOU WIN"
+label_settings = ExtResource("3_lxgxm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MovesLable" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "test
+"
+label_settings = ExtResource("4_rq62j")
+horizontal_alignment = 1
+vertical_alignment = 1

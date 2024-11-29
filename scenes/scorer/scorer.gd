@@ -37,6 +37,9 @@ func  kill_tiles() -> void:
 		
 	_pairs_made += 1
 	
+func  check_game_over() -> void:
+	if _target_pairs == _pairs_made:
+		SignalManager.on_game_over.emit(_moves_made)
 
 func clear_new_game(target_pairs: int) ->void:
 	_selections.clear()
@@ -62,5 +65,5 @@ func _on_reveal_timer_timeout() -> void:
 		for tile in _selections:
 			tile.reveal_image(false)
 	_selections.clear()
-	
+	check_game_over()
 	SignalManager.on_selection_enabled.emit()
